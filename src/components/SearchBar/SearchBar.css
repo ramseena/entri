@@ -1,0 +1,50 @@
+.App {
+    text-align: center;background-color: "pink";margin:1;
+  }
+  
+  .App-logo {
+    height: 40vmin;
+    pointer-events: none;
+  }
+  
+  
+  .Additional{
+   
+    
+      width:'34%';
+      display: flex;
+      flex-direction: row;flex-wrap: wrap;
+     
+      
+    }
+    .SearchView{
+   
+  
+     
+      display: flex;
+      flex-direction: row;
+     
+      
+    }
+    .btn {
+      font-family: 'Ubuntu', sans-serif;
+      position: relative;
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 2;
+      height: 40px;
+      transition: all 200ms linear;
+      border-radius: 4px;
+      width: "20%";
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      align-self: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 12px 35px 0 rgba(16, 39, 112, .25);
+      outline: 0;
+      text-transform: capitalize;
+  }
