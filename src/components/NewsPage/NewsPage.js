@@ -51,7 +51,7 @@ function NewsPage () {
           <WeatherCard />
         </div>
 
-        <div>
+        <div style={{marginLeft:"1.5%"}}>
           <SearchBar />
         </div>
       </div>

@@ -5,6 +5,7 @@ import { searchWords, sortByDate } from '../../redux/actions'
 import Select from 'react-select'
 import { useSelector, useDispatch } from 'react-redux'
 import { actions } from './../../globals/constants'
+import LoaderScreen from './../../globals/loader'
 const SearchBar = props => {
   const filterednewsData = useSelector(state => state.filteredNews)
   const newsData = useSelector(state => state.news)
@@ -67,7 +68,7 @@ const SearchBar = props => {
           />
         </div>
         <br></br>
-        <div>
+        <div style={{justifyContent:"center",alignItems:"center"}}>
           {filterednewsData.length > 0 ? (
             <section className='Additional'>
               {filterednewsData.map(item => {
@@ -75,7 +76,7 @@ const SearchBar = props => {
               })}
             </section>
           ) : (
-            <div>api failed to load data ....</div>
+            <div ><LoaderScreen/></div>
           )}
         </div>
       </div>
