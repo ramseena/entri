@@ -17,15 +17,15 @@ function NewsPage () {
   const [long, setLong] = useState([])
   const [data, setData] = useState({})
 
-  // useEffect(() => {
-  //   const loadNews = async () => {
-  //     const response = await LoadNews()
+  useEffect(() => {
+    const loadNews = async () => {
+      const response = await LoadNews()
 
-  //     dispatch(storeNews(response.data.articles))
-  //   }
+      dispatch(storeNews(response.data.articles))
+    }
 
-  //   loadNews()
-  // }, [])
+    loadNews()
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -58,9 +58,9 @@ console.log(response.data)
             <WeatherCard />
           </div>
     
-        {/* <div>
+        <div>
           <SearchBar />
-        </div> */}
+        </div>
       </div>
     </>
   )
