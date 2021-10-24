@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import './SearchBar.css'
-import ArticleItem from '../ArticleItem/ArticleItem'
+import './searchBar.css'
+import ArticleItem from '../ArticleItem/articleItem'
 import { searchWords,sortByDate } from '../../redux/actions'
 import Select from 'react-select';
 import { useSelector, useDispatch } from 'react-redux'
-
+import{actions} from './../../globals/constants'
 const SearchBar = props => {
   const filterednewsData = useSelector(state => state.filteredNews)
   const newsData = useSelector(state => state.news)
@@ -37,13 +37,7 @@ const SearchBar = props => {
       minHeight: 35,width:"50%"
     })
   };
-  const actions = [
-    { label: "Sort by date",value:0},
-    { label: "ALL", value: 1 },
-   
-    
-    
-  ]
+
  const handleChange = (selectedOption) => {
  setSelectedOption(selectedOption)
    
@@ -75,11 +69,14 @@ const SearchBar = props => {
            
         </div>
         <br></br>
+        <div>
+          {filterednewsData.length>0?
         <section className='Additional'>
           {filterednewsData.map(item => {
             return <ArticleItem key={item.title} item={item}></ArticleItem>
           })}
-        </section>
+        </section>:<div>api failed to load data ....</div>}
+        </div>
       </div>
     </div>
   )

@@ -4,11 +4,11 @@ import { BrowserRouter as Router } from "react-router-dom";
 
 
 
-import NewsPage from './components/NewsPage/NewsPage'
+import NewsPage from './components/NewsPage/newsPage'
 
 import store from './redux/store'
 import { Provider } from 'react-redux'
-import Navbar from '../src/components/NavBar/NavBar'
+import Navbar from './components/NavBar/navBar'
 function App () {
 
   
