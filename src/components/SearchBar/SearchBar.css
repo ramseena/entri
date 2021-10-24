@@ -6,23 +6,46 @@
     height: 40vmin;
     pointer-events: none;
   }
-  
+  .FilterView{
+   
+    
+    width:'34%';
+    display: flex;
+    flex-direction: row;
+   
+    align-items: center;
+    justify-content: center;
+    
+  }
   
   .Additional{
    
+    margin-left: '40%';
     
-      width:'34%';
       display: flex;
       flex-direction: row;flex-wrap: wrap;
      
       
     }
     .SearchView{
-   
+      font-family: 'Ubuntu', sans-serif;
+ 
+      font-weight: 400;
+      font-size: 1.3rem;
+      line-height: 2;
+      height: 10px;
+      transition: all 200ms linear;
+      border-radius: 4px;
+      width: "20%";
+      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      align-self: center;
   
+      width:'54%';
      
-      display: flex;
-      flex-direction: row;
      
       
     }

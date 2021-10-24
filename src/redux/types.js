@@ -1,5 +1,6 @@
 export const Type ={
     STORE_NEWS :'STORE_NEWS',
    STORE_WEATHER:'STORE_WEATHER',
-    
+    SEARCH_WORD:'SEARCH_WORD',
+    SORT_NEWS:'SORT_NEWS'
 };

@@ -16,19 +16,12 @@ function NewsPage () {
   const [lat, setLat] = useState([])
   const [long, setLong] = useState([])
   const [data, setData] = useState({})
-  const [news,setNews] = useState([])
 
   useEffect(() => {
     const loadNews = async () => {
-      try {
-        const response = await axios.get(
-          'https://newsapi.org/v2/everything?q=apple&from=2021-10-23&to=2021-10-23&sortBy=popularity&apiKey=f53b58e228c14711a3822b8bd223115c'
-        )
+      const response = await LoadNews()
 
-        setNews(response.data.articles)
-
-        dispatch(storeNews(response.data.articles))
-      } catch (error) {}
+      dispatch(storeNews(response.data.articles))
     }
 
     loadNews()
@@ -48,7 +41,9 @@ function NewsPage () {
 
         setData(response.data)
         dispatch(storeWeather(response.data))
-      } catch (error) {}
+      } catch (error) {
+        
+      }
     }
     fetchData()
   }, [])
@@ -57,11 +52,12 @@ function NewsPage () {
     <>
       <div className='App'>
         {/* <Header /> */}
-        {data && data.main && Object.keys(data.main).length ? (
+        {/* {data && data.main && data.weather && Object.keys(data.main).length ? (
           <div style={{ width: '100%', height: '1%' }}>
+            <div>df</div>
             <WeatherCard />
           </div>
-        ) : null}
+        ) : null} */}
         <div>
           <SearchBar />
         </div>

@@ -11,3 +11,12 @@ export const storeWeather = (data)=>({
     payload:data
     })
     
+    export const searchWords = (data)=>({
+        type:Type.SEARCH_WORD,
+        payload:data
+        })
+        
+        export const sortByDate = (data)=>({
+            type:Type.SORT_NEWS,
+            payload:data
+            })
