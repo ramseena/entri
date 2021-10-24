@@ -17,18 +17,23 @@ const SearchBar = props => {
     const filtered = news.filter(item => {
       return item.content.toLowerCase().includes(input.toLowerCase())
     })
-    console.log('filter', filtered)
+
+    dispatch(storeNews(filtered))
     setDefaultNews(filtered)
   }, [input])
-  useEffect(() => {
+  const GetData = () => {
     setNews(newsData)
-    console.log('items', loading)
-  }, [])
+    setDefaultNews(newsData)
+  }
+  useEffect(() => {
+    GetData()
+  }, [newsData])
   const SortByDate = () => {
     const sortedNews = news.slice().sort((a, b) => {
       return new Date(b.publishedAt) - new Date(a.publishedAt)
     })
     setDefaultNews(sortedNews)
+    dispatch(storeNews(sortedNews))
   }
 
   const handleSearch = input => {
