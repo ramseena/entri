@@ -19,7 +19,7 @@ function NewsPage () {
   useEffect(() => {
     const loadNews = async () => {
       const response = await LoadNews()
-
+alert("hi")
       dispatch(storeNews(response.data.articles))
     }
 
