@@ -17,15 +17,15 @@ function NewsPage () {
   const [long, setLong] = useState([])
   const [data, setData] = useState({})
 
-  useEffect(() => {
-    const loadNews = async () => {
-      const response = await LoadNews()
+  // useEffect(() => {
+  //   const loadNews = async () => {
+  //     const response = await LoadNews()
 
-      dispatch(storeNews(response.data.articles))
-    }
+  //     dispatch(storeNews(response.data.articles))
+  //   }
 
-    loadNews()
-  }, [])
+  //   loadNews()
+  // }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -36,13 +36,13 @@ function NewsPage () {
         })
 
         const response = await axios.get(
-          `https://api.openweathermap.org/data/2.5/weather/?lat=${lat}&lon=${long}&units=metric&APPID=fbba223c97767c85e9da88ed115fb918`
+          `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=fbba223c97767c85e9da88ed115fb918`
         )
-
-        setData(response.data)
+console.log(response.data)
+      
         dispatch(storeWeather(response.data))
       } catch (error) {
-        
+
       }
     }
     fetchData()
@@ -52,15 +52,15 @@ function NewsPage () {
     <>
       <div className='App'>
         {/* <Header /> */}
-        {/* {data && data.main && data.weather && Object.keys(data.main).length ? (
+       
           <div style={{ width: '100%', height: '1%' }}>
-            <div>df</div>
+            
             <WeatherCard />
           </div>
-        ) : null} */}
-        <div>
+    
+        {/* <div>
           <SearchBar />
-        </div>
+        </div> */}
       </div>
     </>
   )

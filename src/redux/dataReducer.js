@@ -13,7 +13,7 @@ const initialState = {
 }
 
 function dataReducer (state = initialState, action) {
-  
+  console.log(action.payload)
   switch (action.type) {
     case Type.STORE_NEWS:
       return {
@@ -24,7 +24,7 @@ function dataReducer (state = initialState, action) {
     case Type.STORE_WEATHER:
       return {
         ...state,
-        weather: action.payload
+        weather:{...action.payload}
       }
     case Type.SEARCH_WORD:
       console.log(state.news)
@@ -38,7 +38,7 @@ function dataReducer (state = initialState, action) {
       }
 
     case Type.SORT_NEWS:
-      if (action.payload == 0) {
+      if (action.payload === 0) {
         const sortedNews = state.news.slice().sort((a, b) => {
           return new Date(b.publishedAt) - new Date(a.publishedAt)
         })

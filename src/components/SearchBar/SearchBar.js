@@ -18,12 +18,12 @@ const SearchBar = props => {
     
     dispatch(searchWords(input))
    
-  }, [input])
+  }, [input,dispatch])
   useEffect(() => {
     
     dispatch(sortByDate(selectedOption.value))
    
-  }, [selectedOption])
+  }, [selectedOption,dispatch])
 
   
 
@@ -76,7 +76,7 @@ const SearchBar = props => {
         </div>
         <br></br>
         <section className='Additional'>
-          {filterednewsData .map(item => {
+          {filterednewsData.map(item => {
             return <ArticleItem key={item.title} item={item}></ArticleItem>
           })}
         </section>
