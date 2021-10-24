@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 
 
-// import { storeNews, storeWeather } from '../redux/actions'
 
 export async function LoadNews () {
   try {

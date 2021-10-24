@@ -4,7 +4,7 @@ import './newsPage.css'
 import axios from 'axios'
 
 import WeatherCard from '../weather/weatherCard'
-import {  useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import SearchBar from '../SearchBar/searchBar'
 import { storeNews, storeWeather } from '../../redux/actions'
 
@@ -15,7 +15,6 @@ function NewsPage () {
 
   const [lat, setLat] = useState([])
   const [long, setLong] = useState([])
-  
 
   useEffect(() => {
     const loadNews = async () => {
@@ -39,11 +38,8 @@ function NewsPage () {
           `https://api.openweathermap.org/data/2.5/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid=fbba223c97767c85e9da88ed115fb918`
         )
 
-      
         dispatch(storeWeather(response.data))
-      } catch (error) {
-
-      }
+      } catch (error) {}
     }
     fetchData()
   }, [])
@@ -51,13 +47,10 @@ function NewsPage () {
   return (
     <>
       <div className='App'>
-        
-       
-          <div style={{ width: '100%', height: '1%' }}>
-            
-            <WeatherCard />
-          </div>
-    
+        <div style={{ width: '100%', height: '1%' }}>
+          <WeatherCard />
+        </div>
+
         <div>
           <SearchBar />
         </div>

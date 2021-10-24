@@ -24,7 +24,7 @@ function dataReducer (state = initialState, action) {
     case Type.STORE_WEATHER:
       return {
         ...state,
-        weather:{...action.payload}
+        weather: { ...action.payload }
       }
     case Type.SEARCH_WORD:
       console.log(state.news)
