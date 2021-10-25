@@ -16,7 +16,7 @@ const WeatherCard = () => {
             <p className='day'>
               {moment().format('dddd')}, <span>{moment().format('LL')}</span>
             </p>
-            //
+            
             <p className='description'>{weatherData.current.weather[0].main}</p>
           </div>
 
