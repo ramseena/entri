@@ -15,7 +15,7 @@ function NewsPage () {
 
   const [lat, setLat] = useState([])
   const [long, setLong] = useState([])
-
+//loading news from api
   useEffect(() => {
     const loadNews = async () => {
       const response = await LoadNews()
@@ -25,7 +25,7 @@ function NewsPage () {
 
     loadNews()
   }, [])
-
+//fetchiing latitiude and long and getting weather data
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -51,7 +51,7 @@ function NewsPage () {
           <WeatherCard />
         </div>
 
-        <div style={{marginLeft:"1.5%"}}>
+        <div style={{ marginLeft: '1.5%' }}>
           <SearchBar />
         </div>
       </div>

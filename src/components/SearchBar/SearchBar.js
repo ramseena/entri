@@ -14,14 +14,17 @@ const SearchBar = props => {
 
   const [loading, isLoading] = useState(newsData ? false : true)
   const dispatch = useDispatch()
-
+//search word
   useEffect(() => {
     dispatch(searchWords(input))
   }, [input, dispatch])
+
+
+  //sort data by date
   useEffect(() => {
     dispatch(sortByDate(selectedOption.value))
   }, [selectedOption, dispatch])
-
+//setting search keyword
   const handleSearch = input => {
     setInput(input)
   }
@@ -34,7 +37,7 @@ const SearchBar = props => {
       width: '50%'
     })
   }
-
+//handling filter options
   const handleChange = selectedOption => {
     setSelectedOption(selectedOption)
   }

@@ -1,8 +1,6 @@
 import { Type } from './types'
 
-// Action Types
 
-// Action Creators
 
 // reducer
 
