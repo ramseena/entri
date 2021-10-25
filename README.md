@@ -10,3 +10,5 @@ api are free ones.number of hits on api is restricted.so this may cause issue so
 
 
  "react-select": "^5.1.0" is used for picker
+
+ nav bar is used just to complete the design
